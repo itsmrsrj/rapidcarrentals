@@ -38,15 +38,15 @@
       pointer-events: none;
     }
 
-    /* ── NAV ── */
+    /* ── TOP NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 20px 48px;
+      justify-content: center;
+      padding: 18px 48px;
       background: rgba(10,10,15,0.6);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
@@ -55,30 +55,51 @@
     .logo {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
+      font-size: 1.2rem;
+      letter-spacing: 0.01em;
       color: var(--white);
       text-decoration: none;
+      pointer-events: none;
     }
 
     .logo span { color: var(--accent); }
 
-    .nav-links {
+    /* ── BOTTOM NAV ── */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
-      gap: 36px;
-      list-style: none;
+      align-items: center;
+      justify-content: space-around;
+      padding: 12px 0 18px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(24px);
+      border-top: 1px solid var(--border);
     }
 
-    .nav-links a {
+    .bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       transition: color 0.2s;
+      padding: 4px 16px;
     }
 
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .bottom-nav a .bnav-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a.active { color: var(--accent); }
 
     /* ── PAGES ── */
     .page {
@@ -86,7 +107,8 @@
       position: relative;
       z-index: 1;
       min-height: 100vh;
-      padding-top: 80px;
+      padding-top: 70px;
+      padding-bottom: 80px;
     }
 
     .page.active { display: block; }
@@ -346,8 +368,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 16px 24px; }
-      .nav-links { gap: 20px; }
       .contact-card { padding: 28px 24px; }
+      .bottom-nav a { padding: 4px 10px; font-size: 0.65rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -361,14 +383,24 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo" onclick="showPage('home')">Rapid<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-    <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
-    <li><a href="#" onclick="showPage('privacy')" id="nav-privacy">Privacy</a></li>
-    <li><a href="#" onclick="showPage('terms')" id="nav-terms">Terms</a></li>
-  </ul>
+  <a href="#" class="logo" onclick="return false;">Rapid Car Rentals<span>.</span></a>
 </nav>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="#" onclick="showPage('home')" id="nav-home" class="active">
+    <span class="bnav-icon">🏠</span>Home
+  </a>
+  <a href="#" onclick="showPage('contact')" id="nav-contact">
+    <span class="bnav-icon">📞</span>Contact
+  </a>
+  <a href="#" onclick="showPage('privacy')" id="nav-privacy">
+    <span class="bnav-icon">🔒</span>Privacy
+  </a>
+  <a href="#" onclick="showPage('terms')" id="nav-terms">
+    <span class="bnav-icon">📄</span>Terms
+  </a>
+</div>
 
 <!-- ── HOME ── -->
 <section class="page active" id="page-home">
@@ -622,7 +654,7 @@
   /* ── PAGE ROUTING ── */
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.bottom-nav a').forEach(a => a.classList.remove('active'));
     document.getElementById('page-' + id).classList.add('active');
     document.getElementById('nav-' + id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
