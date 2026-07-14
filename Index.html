@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rapid Car Rentals — US & Europe</title>
+<meta name="description" content="Rapid Car Rentals offers flexible, fully insured car rentals across the US and Europe for tourists and business travellers." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#2563eb" />
+<meta property="og:title" content="Rapid Car Rentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rapidnrental.com" />
+<meta property="og:description" content="US & Europe Car Rentals" />
+<link rel="canonical" href="https://rapidnrental.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#ffffff; --off:#f7f8fa; --text:#111827; --muted:#6b7280;
+  --border:#e5e7eb; --accent:#2563eb; --accent-h:#1d4ed8;
+  --accent-l:#eff6ff; --accent-b:#bfdbfe;
+  --green:#16a34a; --green-l:#f0fdf4; --green-b:#bbf7d0;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:15px 24px;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.logo{font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;cursor:pointer;background:none;border:none;text-decoration:none;display:inline-block;}
+.logo span{color:var(--accent);}
+
+/* PAGES */
+.page{display:none;min-height:100vh;padding-top:56px;padding-bottom:0;}
+.page.active{display:block;}
+
+/* HERO */
+.hero{background:var(--off);text-align:center;padding:56px 24px 48px;border-bottom:1px solid var(--border);}
+.badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:0.72rem;font-weight:600;letter-spacing:0.04em;padding:4px 14px;border-radius:999px;border:1px solid var(--accent-b);margin-bottom:18px;}
+.hero h1{font-size:clamp(1.9rem,5.5vw,3rem);font-weight:700;letter-spacing:-0.03em;line-height:1.15;max-width:580px;margin:0 auto 14px;}
+.hero h1 span{color:var(--accent);}
+.hero p{font-size:0.97rem;color:var(--muted);max-width:440px;margin:0 auto 28px;line-height:1.75;}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.trust-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.trust-item{font-size:0.72rem;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.trust-item b{color:var(--green);font-weight:700;}
+
+/* BUTTONS */
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:11px 24px;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border);padding:11px 24px;border-radius:8px;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color 0.2s,transform 0.15s;display:inline-block;}
+.btn-ghost:hover{border-color:#9ca3af;transform:translateY(-1px);}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+.feat{background:var(--white);padding:22px 18px;text-align:center;}
+.feat-icon{font-size:1.4rem;margin-bottom:7px;}
+.feat h3{font-size:0.88rem;font-weight:600;margin-bottom:4px;}
+.feat p{font-size:0.76rem;color:var(--muted);line-height:1.6;}
+
+/* SECTION */
+.section{padding:36px 20px;max-width:660px;margin:0 auto;}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px;}
+.section-sub{font-size:0.8rem;color:var(--muted);margin-bottom:18px;line-height:1.6;}
+
+/* CONTACT CARD */
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.contact-item{display:flex;align-items:center;gap:14px;padding:15px 18px;}
+.contact-item+.contact-item{border-top:1px solid var(--border);}
+.contact-icon{width:36px;height:36px;background:var(--accent-l);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0;}
+.contact-label{font-size:0.66rem;font-weight:600;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:2px;}
+.contact-value{font-size:0.88rem;font-weight:500;}
+.contact-value a{color:inherit;text-decoration:none;}
+.contact-value a:hover{color:var(--accent);}
+
+/* ABOUT */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:18px 0;}
+.stat{background:var(--white);padding:16px 8px;text-align:center;}
+.stat-num{font-size:1.4rem;font-weight:700;color:var(--accent);letter-spacing:-0.02em;}
+.stat-label{font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.about-grid{display:grid;gap:10px;margin-top:16px;}
+.about-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:18px;}
+.about-card h3{font-size:0.88rem;font-weight:600;margin-bottom:5px;}
+.about-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;}
+
+/* SERVICES */
+.service-grid{display:grid;gap:10px;margin-top:16px;}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;gap:13px;align-items:flex-start;}
+.service-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+.service-card h3{font-size:0.88rem;font-weight:600;margin-bottom:4px;}
+.service-card p{font-size:0.78rem;color:var(--muted);line-height:1.65;}
+.service-cta{background:var(--accent-l);border:1px solid var(--accent-b);border-radius:12px;padding:22px 18px;text-align:center;margin-top:22px;}
+.service-cta h3{font-size:0.98rem;font-weight:700;margin-bottom:6px;}
+.service-cta p{font-size:0.8rem;color:var(--muted);margin-bottom:14px;}
+
+/* CONTACT PAGE */
+.contact-page-wrap{max-width:540px;margin:0 auto;padding:28px 20px 40px;}
+.contact-info-box{background:var(--accent-l);border:1px solid var(--accent-b);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:0.8rem;color:#1e40af;line-height:1.6;}
+.payment-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.pay-badge{background:var(--off);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:0.72rem;font-weight:600;color:var(--muted);}
+
+/* PAGE HERO */
+.page-hero{background:var(--off);padding:32px 24px 24px;border-bottom:1px solid var(--border);text-align:center;}
+.page-hero h1{font-size:clamp(1.4rem,4vw,2.1rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:5px;}
+.page-hero p{font-size:0.82rem;color:var(--muted);}
+
+/* LEGAL */
+.legal-wrap{max-width:660px;margin:0 auto;padding:32px 20px 60px;}
+.legal-section{margin-bottom:26px;}
+.legal-section h2{font-size:0.76rem;font-weight:600;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.legal-section p,.legal-section ul{font-size:0.85rem;color:#374151;line-height:1.85;}
+.legal-section ul{padding-left:18px;}
+.legal-section ul li{margin-bottom:5px;}
+.legal-section a,.link-btn{color:var(--accent);text-decoration:none;background:none;border:none;font-size:inherit;font-family:inherit;cursor:pointer;padding:0;}
+.legal-section a:hover,.link-btn:hover{text-decoration:underline;}
+
+/* REFUND TABLE */
+.refund-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:0.82rem;}
+.refund-table th{background:var(--off);padding:10px 12px;text-align:left;font-weight:600;font-size:0.73rem;color:var(--muted);border:1px solid var(--border);}
+.refund-table td{padding:10px 12px;border:1px solid var(--border);color:var(--text);line-height:1.5;}
+.refund-table tr:nth-child(even) td{background:var(--off);}
+.pill-green{background:var(--green-l);color:var(--green);border:1px solid var(--green-b);padding:2px 8px;border-radius:999px;font-size:0.7rem;font-weight:600;white-space:nowrap;}
+.pill-red{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;padding:2px 8px;border-radius:999px;font-size:0.7rem;font-weight:600;white-space:nowrap;}
+.pill-yellow{background:#fffbeb;color:#d97706;border:1px solid #fde68a;padding:2px 8px;border-radius:999px;font-size:0.7rem;font-weight:600;white-space:nowrap;}
+
+/* NAV BUTTONS (used everywhere instead of <a href="#">) */
+.nav-btn{background:none;border:none;padding:0;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--muted);cursor:pointer;text-decoration:none;transition:color 0.2s;}
+.nav-btn:hover{color:var(--accent);}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20px 22px;text-align:center;}
+.footer-logo{font-size:0.92rem;font-weight:700;margin-bottom:14px;}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-bottom:18px;}
+.footer-links .nav-btn{font-size:0.78rem;}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:3px;margin-bottom:14px;}
+.footer-contact-line{font-size:0.68rem;color:var(--muted);line-height:1.5;}
+.footer-contact-line a{color:var(--muted);text-decoration:none;}
+.footer-contact-line a:hover{color:var(--accent);}
+.footer-copy{font-size:0.66rem;color:#9ca3af;}
+
+@media (max-width:480px){
+  .stat-num{font-size:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="logo">Rapid Car Rentals<span>.</span></a>
+</nav>
+
+<!-- ============ HOME ============ -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <div class="badge">🌍 US &amp; Europe Car Rentals</div>
+    <h1>Drive anywhere.<br><span>On your terms.</span></h1>
+    <p>Flexible short-term and long-term car rentals for tourists and business travellers across the United States and Europe. No hidden fees, no hassle.</p>
+    <div class="cta-row">
+      <a href="tel:+12025550190" class="btn-primary">📞 Call to Book</a>
+      <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><b>✓</b> Fully Insured</div>
+      <div class="trust-item"><b>✓</b> No Hidden Fees</div>
+      <div class="trust-item"><b>✓</b> 7-Day Support</div>
+      <div class="trust-item"><b>✓</b> Stripe Secured</div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">🚗</div><h3>All Vehicle Types</h3><p>Economy cars, SUVs, vans, and luxury — something for every trip.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><h3>Instant Booking</h3><p>Confirm your rental in minutes with no paperwork queues.</p></div>
+    <div class="feat"><div class="feat-icon">🛡️</div><h3>Fully Insured</h3><p>Comprehensive insurance included with every booking.</p></div>
+    <div class="feat"><div class="feat-icon">💳</div><h3>Secure Payments</h3><p>Pay safely via card or PayPal, powered by Stripe.</p></div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Rapid Car Rentals<span>.</span></div>
+    <div class="footer-links">
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" id="page-about">
+  <div class="page-hero"><h1>About Us</h1><p>Who we are and what drives us</p></div>
+  <div class="legal-wrap">
+    <div class="legal-section">
+      <h2>Our Story</h2>
+      <p>Rapid Car Rentals was founded with a single mission: make renting a car as simple and stress-free as possible. We saw how traditional rental companies buried customers in paperwork, surprise fees, and inflexible policies — and we built something better.</p>
+      <p style="margin-top:8px">Today we serve tourists, families, and business travellers across the United States and Europe, providing everything from fuel-efficient economy cars to spacious SUVs, people carriers, vans, and premium vehicles — all at transparent, competitive prices.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Continents</div></div>
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Days Support</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Insured Fleet</div></div>
+    </div>
+    <div class="legal-section">
+      <h2>What Makes Us Different</h2>
+      <div class="about-grid">
+        <div class="about-card"><h3>🚀 No Hidden Fees</h3><p>The price you see is the price you pay. All charges displayed upfront — no surprise fuel levies, airport premiums, or admin fees in the small print.</p></div>
+        <div class="about-card"><h3>🌍 US &amp; Europe Coverage</h3><p>Whether you're driving through New York, Paris, or the Scottish Highlands, we have vehicles where you need them. One company, two continents.</p></div>
+        <div class="about-card"><h3>💼 Business &amp; Tourist Ready</h3><p>A solo business traveller and a family of five need different things. Our fleet and service are designed to serve both equally well.</p></div>
+        <div class="about-card"><h3>🔒 Stripe-Secured Payments</h3><p>All payments processed via Stripe — the world's most trusted payment infrastructure, used by millions of businesses worldwide. Your card details are never stored on our systems.</p></div>
+        <div class="about-card"><h3>🏦 International Banking via Wise</h3><p>We use Wise for international payments and multi-currency transactions, ensuring fast, low-cost, and transparent money handling across the US and Europe.</p></div>
+      </div>
+    </div>
+    <div class="legal-section">
+      <h2>Our Commitment</h2>
+      <p>Every vehicle in our fleet is regularly serviced, fully insured, and cleaned before handover. We back every booking with 7-day human support — not bots, not forms, just a real person you can call or email.</p>
+    </div>
+    <div class="legal-section">
+      <h2>Legitimate Business Operations</h2>
+      <p>Rapid Car Rentals is a registered vehicle rental business operating in compliance with applicable US and EU regulations. We maintain verified business accounts, use industry-standard payment processing via Stripe, and handle international transactions through Wise. Our advertising is managed responsibly via Google Ads, targeting genuine customers seeking car rental services in the US and Europe.</p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="page" id="page-services">
+  <div class="page-hero"><h1>Our Services</h1><p>Everything you need for the road ahead</p></div>
+  <div class="section">
+    <div class="section-title">What We Do</div>
+    <div class="section-sub">Rapid Car Rentals provides flexible, fully insured vehicle hire for individuals and businesses across the US and Europe. From a one-day city run to a three-month corporate assignment — we have you covered.</div>
+    <div class="service-grid">
+      <div class="service-card"><div class="service-icon">🚗</div><div><h3>Economy &amp; Standard Cars</h3><p>Compact, fuel-efficient cars for city commutes, airport transfers, and short trips. Toyota Corolla, Honda Civic, and equivalents.</p></div></div>
+      <div class="service-card"><div class="service-icon">🚙</div><div><h3>SUVs &amp; Crossovers</h3><p>Spacious, comfortable SUVs for families, groups, and road trips across the US and Europe.</p></div></div>
+      <div class="service-card"><div class="service-icon">🚐</div><div><h3>Vans &amp; People Carriers</h3><p>7–9 seater vans and MPVs for larger groups, corporate transfers, events, and equipment transport.</p></div></div>
+      <div class="service-card"><div class="service-icon">✨</div><div><h3>Premium &amp; Luxury Vehicles</h3><p>Executive sedans, luxury SUVs, and performance models for business travel or special occasions.</p></div></div>
+      <div class="service-card"><div class="service-icon">📅</div><div><h3>Short-Term Rentals</h3><p>Daily and weekly hire with no long-term commitment. Perfect for tourists and visiting professionals.</p></div></div>
+      <div class="service-card"><div class="service-icon">📆</div><div><h3>Long-Term Rentals</h3><p>Monthly and extended rentals for relocating professionals and corporate clients. Discounted rates for 30+ day bookings.</p></div></div>
+      <div class="service-card"><div class="service-icon">✈️</div><div><h3>Airport Pickup &amp; Drop</h3><p>Vehicle ready at your arrival terminal, coordinated with your flight time. No shuttles, no waiting.</p></div></div>
+      <div class="service-card"><div class="service-icon">💼</div><div><h3>Corporate Accounts</h3><p>Priority booking, consolidated invoicing, and volume discounts for businesses with regular rental needs.</p></div></div>
+    </div>
+    <div class="service-cta">
+      <h3>Ready to book or have a question?</h3>
+      <p>Our team is available 7 days a week. Call us or email and we'll respond within the hour.</p>
+      <div class="cta-row">
+        <a href="tel:+12025550190" class="btn-primary">📞 Call Us Now</a>
+        <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" id="page-contact">
+  <div class="page-hero"><h1>Contact Us</h1><p>We're here to help, 7 days a week</p></div>
+  <div class="contact-page-wrap">
+    <div class="contact-info-box">💡 For fastest response, <strong>call or text us directly</strong>. We typically reply to emails within 1 hour during business hours (9 AM – 9 PM, all days).</div>
+    <div class="contact-card">
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-label">Phone / Text</div><div class="contact-value"><a href="tel:+12025550190">+1 (202) 555-0190</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div></div></div>
+      <div class="contact-item"><div class="contact-icon">🕐</div><div><div class="contact-label">Business Hours</div><div class="contact-value">9 AM – 9 PM, All Days</div></div></div>
+      <div class="contact-item"><div class="contact-icon">🌍</div><div><div class="contact-label">Coverage</div><div class="contact-value">United States &amp; Europe</div></div></div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">Address</div><div class="contact-value">210, Ashok Vihar, Sector 3,<br>Gurugram – 122001</div></div></div>
+    </div>
+    <div class="section-title" style="margin-top:26px;margin-bottom:6px;font-size:0.95rem">Payment Methods</div>
+    <div class="section-sub">Processed securely via Stripe — PCI-DSS Level 1 certified.</div>
+    <div class="payment-row">
+      <div class="pay-badge">💳 Visa</div>
+      <div class="pay-badge">💳 Mastercard</div>
+      <div class="pay-badge">💳 Amex</div>
+      <div class="pay-badge">🅿️ PayPal</div>
+      <div class="pay-badge">🏦 Bank Transfer</div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ PRIVACY POLICY ============ -->
+<section class="page" id="page-privacy">
+  <div class="page-hero"><h1>Privacy Policy</h1><p>Effective Date: 1 January 2025</p></div>
+  <div class="legal-wrap">
+    <div class="legal-section"><h2>01 / Who We Are</h2><p>Rapid Car Rentals ("we", "our", "us") is a vehicle rental company operating across the United States and Europe, headquartered at 210, Ashok Vihar, Sector 3, Gurugram – 122001. We are committed to protecting your personal data. This Privacy Policy complies with the California Consumer Privacy Act (CCPA), the EU General Data Protection Regulation (GDPR), and the UK GDPR. Payments are processed by <strong>Stripe</strong>, a PCI-DSS Level 1 certified payment processor. We do not store any payment card data on our own systems.</p></div>
+    <div class="legal-section"><h2>02 / Data We Collect</h2><ul><li>Full name, email address, and phone number when you contact or book with us.</li><li>Government-issued ID and driver's license details for identity and eligibility verification.</li><li>Pickup and drop location data when provided by you.</li><li>Payment transaction references from Stripe (we do not receive or store full card numbers).</li><li>Device, browser, and usage information collected automatically via cookies for analytics, advertising measurement, and fraud prevention.</li></ul></div>
+    <div class="legal-section"><h2>03 / How We Use Your Data</h2><ul><li>To process, confirm, and manage your vehicle rental booking.</li><li>To verify your identity and driver eligibility.</li><li>To communicate with you about your booking or support requests.</li><li>To process payments securely through Stripe and issue receipts.</li><li>To measure and improve the performance of our Google Ads campaigns.</li><li>To comply with legal obligations under US and EU law.</li></ul><p style="margin-top:8px">We do <strong>not</strong> sell, rent, or share your personal data with third parties for their own marketing purposes.</p></div>
+    <div class="legal-section"><h2>04 / Third-Party Services</h2><ul><li><strong>Stripe</strong> — Payment processing (PCI-DSS Level 1 compliant). Stripe acts as an independent data controller for payment data. See Stripe's own privacy policy at stripe.com/privacy.</li><li><strong>Wise</strong> — International business banking for currency management and payouts.</li><li><strong>Google Ads &amp; Google Analytics</strong> — Used to measure advertising performance and website usage. Google may set cookies for conversion tracking and remarketing. You can opt out via Google's Ad Settings or industry opt-out tools such as the Digital Advertising Alliance.</li></ul></div>
+    <div class="legal-section"><h2>05 / Your Rights (CCPA / GDPR)</h2><ul><li>Right to access the personal data we hold about you.</li><li>Right to correct inaccurate or incomplete data.</li><li>Right to erasure ("right to be forgotten") where applicable.</li><li>Right to data portability.</li><li>Right to withdraw consent at any time, including opting out of advertising cookies.</li><li>Right to opt out of the sale or sharing of personal data (we do not sell personal data).</li><li>Right to lodge a complaint with the FTC (US), ICO (UK), or your national EU data protection authority.</li></ul><p style="margin-top:8px">Email <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a> to exercise any of these rights.</p></div>
+    <div class="legal-section"><h2>06 / Data Retention</h2><p>Booking records are retained for a minimum of 5 years for tax, insurance, and audit purposes. Advertising and analytics data is retained per Google's standard retention windows unless you opt out sooner. You may request deletion of non-legally-required data at any time.</p></div>
+    <div class="legal-section"><h2>07 / Cookies</h2><p>We use essential cookies for website functionality, analytics cookies (Google Analytics) to understand site usage, and advertising cookies (Google Ads) for conversion tracking and remarketing. You will be shown a cookie consent option on your first visit and can change your preferences at any time via your browser settings.</p></div>
+    <div class="legal-section"><h2>08 / Data Security</h2><p>We use HTTPS encryption, access controls, and regular security reviews. All payment data is handled exclusively by Stripe's PCI-DSS Level 1 certified infrastructure — the highest level of certification in the payments industry.</p></div>
+    <div class="legal-section"><h2>09 / Contact</h2><p>📧 <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a><br>📞 <a href="tel:+12025550190">+1 (202) 555-0190</a><br>📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</p></div>
+    <div class="legal-section"><h2>10 / Updates</h2><p>We may update this policy periodically. The effective date above reflects the latest revision. Continued use of our services after changes constitutes acceptance of the updated policy.</p></div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ TERMS & CONDITIONS ============ -->
+<section class="page" id="page-terms">
+  <div class="page-hero"><h1>Terms &amp; Conditions</h1><p>Effective Date: 1 January 2025</p></div>
+  <div class="legal-wrap">
+    <div class="legal-section"><h2>01 / Agreement</h2><p>By making a booking or using any service offered by Rapid Car Rentals ("we", "our", "us", registered at 210, Ashok Vihar, Sector 3, Gurugram – 122001), you agree to be bound by these Terms and Conditions. These terms form a legally binding agreement between you ("the Customer") and Rapid Car Rentals ("the Company").</p></div>
+    <div class="legal-section"><h2>02 / Eligibility</h2><ul><li>You must be at least 18 years of age. Some vehicle categories may require a minimum age of 21 or 25.</li><li>You must hold a full, valid driver's license for the category of vehicle rented.</li><li>You must present a valid government-issued photo ID at vehicle handover.</li><li>International customers must present a valid passport and, where required, an International Driving Permit (IDP).</li></ul></div>
+    <div class="legal-section"><h2>03 / Booking &amp; Payment</h2><ul><li>All bookings are subject to vehicle availability and must be confirmed by Rapid Car Rentals.</li><li>A deposit or full payment may be required at the time of booking.</li><li>All prices include applicable taxes unless stated otherwise.</li><li>Payments are processed securely via <strong>Stripe</strong>, a PCI-DSS Level 1 certified payment processor. We accept Visa, Mastercard, Amex, PayPal, and bank transfer.</li><li>A refundable security deposit may be held at vehicle handover and released within 7 business days of return, subject to vehicle condition.</li></ul></div>
+    <div class="legal-section"><h2>04 / Cancellation &amp; Refunds</h2><p>Please refer to our <a href="#refund" class="link-btn">Refund &amp; Cancellation Policy</a> for full details.</p></div>
+    <div class="legal-section"><h2>05 / Vehicle Use</h2><ul><li>Vehicles must be used only for lawful purposes within the agreed geographic zone.</li><li>Sub-letting or transferring the vehicle to any third party is strictly prohibited.</li><li>Smoking in vehicles, transporting hazardous materials, or exceeding seating capacity is not permitted.</li><li>Off-road use is prohibited unless you have rented a vehicle specifically for that purpose.</li><li>Vehicles must be returned with the same fuel level as at handover.</li></ul></div>
+    <div class="legal-section"><h2>06 / Damage &amp; Liability</h2><ul><li>You are liable for all damage to the vehicle during the rental period.</li><li>Any damage must be reported immediately.</li><li>In the event of an accident, contact emergency services and notify us immediately. Do not admit liability.</li><li>Insurance coverage is void in cases of driving under the influence or reckless driving.</li><li>The security deposit may be applied to cover assessed repair costs.</li></ul></div>
+    <div class="legal-section"><h2>07 / Traffic Violations</h2><p>You are solely responsible for any traffic fines, tolls, or penalties incurred during the rental period. A $50 administrative fee will be added to any violation notice received by Rapid Car Rentals.</p></div>
+    <div class="legal-section"><h2>08 / Extensions</h2><p>Extensions must be approved in advance. Unauthorised retention may result in a charge of up to 2x the daily rate plus legal costs.</p></div>
+    <div class="legal-section"><h2>09 / Breakdown</h2><p>In the event of a mechanical breakdown not caused by misuse, we will arrange a replacement vehicle or roadside assistance as quickly as possible.</p></div>
+    <div class="legal-section"><h2>10 / Advertising &amp; Third-Party Services</h2><p>We advertise our services via Google Ads and process payments via Stripe. Use of our website constitutes acceptance of the respective terms of these third-party providers where applicable to your interaction with them.</p></div>
+    <div class="legal-section"><h2>11 / Governing Law</h2><p>These Terms are governed by the laws of the State of New York, USA. EU and UK customers retain all statutory rights under applicable local consumer protection law. Disputes shall be referred to the courts of New York, NY.</p></div>
+    <div class="legal-section"><h2>12 / Contact</h2><p>📧 <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a><br>📞 <a href="tel:+12025550190">+1 (202) 555-0190</a><br>📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</p></div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#refund" class="nav-btn">Refund &amp; Cancellation</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<!-- ============ REFUND & CANCELLATION ============ -->
+<section class="page" id="page-refund">
+  <div class="page-hero"><h1>Refund &amp; Cancellation Policy</h1><p>Effective Date: 1 January 2025</p></div>
+  <div class="legal-wrap">
+    <div class="legal-section"><h2>01 / Our Commitment</h2><p>We understand plans change. Our cancellation policy is designed to be fair and transparent — in line with Stripe's requirements for clear refund terms. All refunds are processed via the original payment method through <strong>Stripe</strong> and typically appear within 5–10 business days depending on your bank.</p></div>
+    <div class="legal-section">
+      <h2>02 / Cancellation Schedule</h2>
+      <table class="refund-table">
+        <thead><tr><th>Cancellation Timing</th><th>Refund</th></tr></thead>
+        <tbody>
+          <tr><td>More than 48 hours before pickup</td><td><span class="pill-green">Full Refund</span></td></tr>
+          <tr><td>24 – 48 hours before pickup</td><td><span class="pill-yellow">75% Refund</span></td></tr>
+          <tr><td>Less than 24 hours before pickup</td><td><span class="pill-red">No Refund</span></td></tr>
+          <tr><td>No-show</td><td><span class="pill-red">No Refund</span></td></tr>
+          <tr><td>Early vehicle return</td><td><span class="pill-yellow">Partial Refund (pro-rata, case by case)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legal-section"><h2>03 / How to Cancel</h2><p>Contact us as early as possible:</p><ul><li>📞 Call or text: <a href="tel:+12025550190">+1 (202) 555-0190</a></li><li>✉️ Email: <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></li></ul><p style="margin-top:8px">Please include your booking reference and full name. Cancellations are valid only once confirmed in writing by our team.</p></div>
+    <div class="legal-section"><h2>04 / Security Deposit</h2><p>The refundable security deposit will be released within <strong>7 business days</strong> after the vehicle is returned and inspected. Any damage, fuel shortfall, or outstanding charges will be deducted before release. Deposits are returned via Stripe to your original payment method.</p></div>
+    <div class="legal-section"><h2>05 / Exceptional Circumstances</h2><p>In cases of medical emergencies, natural disasters, or government-imposed travel restrictions, we will review cancellation requests on a case-by-case basis. Contact us with relevant documentation and we will work toward a fair resolution.</p></div>
+    <div class="legal-section"><h2>06 / Disputes &amp; Chargebacks</h2><p>If you are unsatisfied with a refund decision, email <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a> within 14 days. We aim to resolve all disputes within 5 business days. We encourage customers to contact us directly before filing a chargeback with their card issuer, as this allows us to resolve most issues faster than the standard dispute process.</p></div>
+    <div class="legal-section"><h2>07 / Stripe Processing</h2><p>All refunds are issued through Stripe, our PCI-DSS Level 1 certified payment processor. Once initiated, funds typically appear in your account within 5–10 business days depending on your bank. You will receive an automatic email confirmation from Stripe when the refund is processed.</p></div>
+    <div class="legal-section"><h2>08 / Contact</h2><p>📧 <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a><br>📞 <a href="tel:+12025550190">+1 (202) 555-0190</a><br>📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</p></div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="#home" class="nav-btn">Home</a>
+      <a href="#about" class="nav-btn">About Us</a>
+      <a href="#services" class="nav-btn">Services</a>
+      <a href="#contact" class="nav-btn">Contact Us</a>
+      <a href="#privacy" class="nav-btn">Privacy Policy</a>
+      <a href="#terms" class="nav-btn">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+      <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+    </div>
+    <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+  </footer>
+</section>
+
+<script>
+(function () {
+
+  const VALID_PAGES = ["home", "about", "services", "contact", "privacy", "terms", "refund"];
+
+  function render(page) {
+    if (!VALID_PAGES.includes(page)) page = "home";
+
+    document.querySelectorAll(".page").forEach(function (section) {
+      section.classList.remove("active");
+    });
+
+    const target = document.getElementById("page-" + page);
+    if (target) target.classList.add("active");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function navigate(page) {
+    location.hash = page;
+  }
+  window.navigate = navigate;
+
+  function loadRoute() {
+    const page = location.hash.replace("#", "") || "home";
+    render(page);
+  }
+
+  window.addEventListener("hashchange", loadRoute);
+  window.addEventListener("load", loadRoute);
+
+})();
+</script>
+</body>
+</html>
