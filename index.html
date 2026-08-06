@@ -134,7 +134,8 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
 .footer-logo{font-size:0.92rem;font-weight:700;margin-bottom:14px;}
 .footer-logo span{color:var(--accent);}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-bottom:18px;}
-.footer-links .nav-btn{font-size:0.78rem;}
+.footer-links .nav-btn{font-size:0.78rem;color:var(--muted);text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.footer-links .nav-btn:hover{color:var(--accent);}
 .footer-contact{display:flex;flex-direction:column;align-items:center;gap:3px;margin-bottom:14px;}
 .footer-contact-line{font-size:0.68rem;color:var(--muted);line-height:1.5;}
 .footer-contact-line a{color:var(--muted);text-decoration:none;}
@@ -183,15 +184,15 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
         <div>
           <div style="font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:14px;">🌍 Locations</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <a href="cities.html" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Cities</a>
-            <a href="airports.html" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Airports</a>
+            <a href="cities.html" onclick="window.location.href='cities.html'; return false;" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Cities</a>
+            <a href="airports.html" onclick="window.location.href='airports.html'; return false;" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Airports</a>
           </div>
         </div>
         <div>
           <div style="font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:14px;">📚 Resources</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <a href="comparison-articles.html" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Comparisons</a>
-            <a href="travel-guides.html" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Travel Guides</a>
+            <a href="comparison-articles.html" onclick="window.location.href='comparison-articles.html'; return false;" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Comparisons</a>
+            <a href="travel-guides.html" onclick="window.location.href='travel-guides.html'; return false;" style="font-size:0.8rem;color:#d1d5db;text-decoration:none;">Travel Guides</a>
           </div>
         </div>
       </div>
@@ -279,7 +280,4 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
       <div class="service-card"><div class="service-icon">✨</div><div><h3>Premium &amp; Luxury Vehicles</h3><p>Executive sedans, luxury SUVs, and performance models for business travel or special occasions.</p></div></div>
       <div class="service-card"><div class="service-icon">📅</div><div><h3>Short-Term Rentals</h3><p>Daily and weekly hire with no long-term commitment. Perfect for tourists and visiting professionals.</p></div></div>
       <div class="service-card"><div class="service-icon">📆</div><div><h3>Long-Term Rentals</h3><p>Monthly and extended rentals for relocating professionals and corporate clients. Discounted rates for 30+ day bookings.</p></div></div>
-      <div class="service-card"><div class="service-icon">✈️</div><div><h3>Airport Pickup &amp; Drop</h3><p>Vehicle ready at your arrival terminal, coordinated with your flight time. No shuttles, no waiting.</p></div></div>
-      <div class="service-card"><div class="service-icon">💼</div><div><h3>Corporate Accounts</h3><p>Priority booking, consolidated invoicing, and volume discounts for businesses with regular rental needs.</p></div></div>
-    </div>
-    <div class="se
+      <div class="service-card"><div class="service-icon">✈️</div><div><h3>Airport Pi
