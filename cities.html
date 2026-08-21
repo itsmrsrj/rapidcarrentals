@@ -3,23 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Car Rental in US & Europe Cities | Rapid Car Rentals</title>
-<meta name="description" content="Browse car rentals across major US and European cities. Transparent pricing, full insurance, no hidden fees." />
+<title>Car Rental Destinations | Rapid Car Rentals</title>
+<meta name="description" content="Rent a car in top US and European cities. New York, LA, Orlando, Miami, Las Vegas, London, Paris, Rome, Barcelona, and more." />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#2563eb" />
-<meta property="og:title" content="Car Rental in US & Europe Cities | Rapid Car Rentals" />
+<meta property="og:title" content="Car Rental Destinations" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://rapidnrental.com/cities.html" />
-<meta property="og:description" content="Browse car rentals across major US and European cities. Transparent pricing, full insurance, no hidden fees." />
-<link rel="canonical" href="https://rapidnrental.com/cities.html" />
+<meta property="og:url" content="https://rapidnrental.com/destinations.html" />
+<meta property="og:description" content="Rent a car in top US and European cities with Rapid Car Rentals." />
+<link rel="canonical" href="https://rapidnrental.com/destinations.html" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --white:#ffffff; --off:#f7f8fa; --text:#111827; --muted:#6b7280;
-  --border:#e5e7eb; --accent:#2563eb; --accent-h:#1d4ed8;
-  --accent-l:#eff6ff; --accent-b:#bfdbfe;
-}
+:root{--white:#ffffff;--off:#f7f8fa;--text:#111827;--muted:#6b7280;--border:#e5e7eb;--accent:#2563eb;--accent-h:#1d4ed8;--accent-l:#eff6ff;--accent-b:#bfdbfe;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);min-height:100vh;overflow-x:hidden;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:15px 24px;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
@@ -27,18 +23,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo span{color:var(--accent);}
 main{padding-top:56px;}
 .hero{background:var(--off);text-align:center;padding:56px 24px 48px;border-bottom:1px solid var(--border);}
-.badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:0.72rem;font-weight:600;letter-spacing:0.04em;padding:4px 14px;border-radius:999px;border:1px solid var(--accent-b);margin-bottom:18px;}
 .hero h1{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:700;letter-spacing:-0.03em;line-height:1.2;max-width:600px;margin:0 auto 14px;}
 .hero p{font-size:0.97rem;color:var(--muted);max-width:480px;margin:0 auto 28px;line-height:1.75;}
 .section{padding:36px 20px;max-width:900px;margin:0 auto;}
-.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px;}
-.listings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
-.listing-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;transition:box-shadow 0.2s,transform 0.2s;}
-.listing-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08);transform:translateY(-2px);}
-.listing-card h3{font-size:0.95rem;font-weight:600;margin-bottom:8px;color:var(--text);}
-.listing-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;margin-bottom:12px;}
-.listing-card a{display:inline-block;padding:8px 16px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.78rem;font-weight:600;text-decoration:none;transition:background 0.2s;}
-.listing-card a:hover{background:var(--accent-h);}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px;}
+.section-sub{font-size:0.85rem;color:#374151;line-height:1.8;margin-bottom:24px;}
+.destination-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px;}
+.destination-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;transition:all 0.2s;cursor:pointer;}
+.destination-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(37,99,235,0.1);}
+.destination-card h3{font-size:0.95rem;font-weight:600;margin-bottom:6px;color:var(--text);}
+.destination-card p{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.destination-card a{font-size:0.85rem;font-weight:500;color:var(--accent);text-decoration:none;}
+.destination-card a:hover{text-decoration:underline;}
 footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20px 22px;text-align:center;}
 .footer-logo{font-size:0.92rem;font-weight:700;margin-bottom:14px;}
 .footer-logo span{color:var(--accent);}
@@ -50,43 +46,92 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
 .footer-contact-line a{color:var(--muted);text-decoration:none;}
 .footer-contact-line a:hover{color:var(--accent);}
 .footer-copy{font-size:0.66rem;color:#9ca3af;}
+.hub-nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+.hub-nav a{font-size:0.85rem;font-weight:500;color:var(--text);text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:6px;transition:all 0.2s;}
+.hub-nav a:hover,.hub-nav a.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 </style>
 </head>
 <body>
-<nav><a href="index.html" class="logo">Rapid Car Rentals<span>.</span></a></nav>
+
+<nav>
+  <a href="index.html" class="logo">Rapid Car Rentals<span>.</span></a>
+</nav>
+
 <main>
-<div class="hero"><div class="badge">🌍 Cities</div><h1>Car Rental Locations</h1><p>Rent a car in the world's major cities. Find transparent pricing, full insurance, and reliable vehicles across the US and Europe.</p></div>
-<div class="section">
-<div class="section-title">Car Rental Locations</div>
-<div class="listings-grid">
-    <div class="listing-card">
-      <h3>🗽 New York City</h3>
-      <p>Easy access to Hudson Valley, the Hamptons, Niagara Falls, and beyond.</p>
-      <a href="car-rental-new-york-city.html">View Rentals →</a>
-    </div>
-    <div class="listing-card">
-      <h3>🌴 Los Angeles</h3>
-      <p>Perfect for Pacific Coast Highway, Joshua Tree, and cross-country road trips.</p>
-      <a href="car-rental-los-angeles.html">View Rentals →</a>
-    </div>
-    <div class="listing-card">
-      <h3>🎢 Orlando</h3>
-      <p>Family-friendly vehicles for theme parks and Space Coast day trips.</p>
-      <a href="car-rental-orlando.html">View Rentals →</a>
-    </div>
-    <div class="listing-card">
-      <h3>🌊 Miami</h3>
-      <p>Business and leisure travel. Ideal for South Beach and Florida Keys runs.</p>
-      <a href="car-rental-miami.html">View Rentals →</a>
-    </div>
-    <div class="listing-card">
-      <h3>🎰 Las Vegas</h3>
-      <p>Grand Canyon, Zion, and desert national park road trips made easy.</p>
-      <a href="car-rental-las-vegas.html">View Rentals →</a>
+  <div class="hero">
+    <h1>Car Rental Destinations</h1>
+    <p>Rent a car in top US and European cities. From New York to Paris, Orlando to Rome — flexible rates, full insurance, no hidden fees.</p>
+  </div>
+
+  <div class="section">
+    <div class="hub-nav">
+      <a href="destinations.html" class="active">🏙️ City Rentals</a>
+      <a href="airport-rentals.html">✈️ Airport Pickups</a>
+      <a href="travel-guides.html">📘 Travel Guides</a>
     </div>
 
-</div>
-</div>
+    <div class="section-title">US Cities</div>
+    <div class="section-sub">Rent a car in America's top travel and business destinations.</div>
+    <div class="destination-grid">
+      <div class="destination-card">
+        <h3>🗽 New York City</h3>
+        <p>Perfect for weekend getaways to the Hamptons, Hudson Valley, or upstate.</p>
+        <a href="car-rental-new-york-city.html">Rent in NYC →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🌴 Los Angeles</h3>
+        <p>Ideal for PCH road trips to Big Sur, Joshua Tree, and Palm Springs.</p>
+        <a href="car-rental-los-angeles.html">Rent in LA →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🎢 Orlando</h3>
+        <p>Family-friendly SUVs and vans for theme park trips and Space Coast day trips.</p>
+        <a href="car-rental-orlando.html">Rent in Orlando →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🌊 Miami</h3>
+        <p>Business and leisure rentals for Brickell, South Beach, and the Florida Keys.</p>
+        <a href="car-rental-miami.html">Rent in Miami →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🎰 Las Vegas</h3>
+        <p>SUVs for Grand Canyon, Zion, and Death Valley road trips from the Strip.</p>
+        <a href="car-rental-las-vegas.html">Rent in Vegas →</a>
+      </div>
+      <!-- NEW CITIES ADDED HERE -->
+    </div>
+
+    <div class="section-title" style="margin-top:32px">European Cities</div>
+    <div class="section-sub">Rent a car across the US and Europe with transparent pricing and full insurance.</div>
+    <div class="destination-grid">
+      <div class="destination-card">
+        <h3>🇬🇧 London</h3>
+        <p>Explore the Cotswolds, Bath, and Stonehenge with a reliable rental.</p>
+        <a href="car-rental-london.html">Rent in London →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🇫🇷 Paris</h3>
+        <p>Day trips to Versailles, Loire Valley, and Mont Saint-Michel.</p>
+        <a href="car-rental-paris.html">Rent in Paris →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🇮🇹 Rome</h3>
+        <p>Discover Tuscany, the Amalfi Coast, and the Italian countryside.</p>
+        <a href="car-rental-rome.html">Rent in Rome →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🇪🇸 Barcelona</h3>
+        <p>Road trips along the Costa Brava and into the Spanish interior.</p>
+        <a href="car-rental-barcelona.html">Rent in Barcelona →</a>
+      </div>
+      <div class="destination-card">
+        <h3>🇩🇪 Berlin</h3>
+        <p>Explore the German countryside and Eastern European day trips.</p>
+        <a href="car-rental-berlin.html">Rent in Berlin →</a>
+      </div>
+      <!-- NEW CITIES ADDED HERE -->
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -101,11 +146,10 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
     <a href="index.html#refund">Refund &amp; Cancellation</a>
   </div>
   <div class="footer-contact">
-    <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 (202) 555-0190</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+    <div class="footer-contact-line">📞 <a href="tel:+12025550190">+1 917 9470401</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
     <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
   </div>
   <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
 </footer>
-
 </body>
 </html>
