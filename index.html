@@ -9,7 +9,9 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-18260847013');
-<!-- Event snippet for Click to call conversion page
+</script>
+
+<!-- Event snippet for Website phone click conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
 function gtag_report_conversion(url) {
@@ -26,8 +28,6 @@ function gtag_report_conversion(url) {
   });
   return false;
 }
-</script>
-
 </script>
 <meta charset="UTF-8" />
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -111,7 +111,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
     <h1>Drive Anywhere. <span>On Your Terms.</span></h1>
     <p>Rapid Car Rentals delivers transparent pricing, full insurance, and zero surprises. Available in the US and Europe.</p>
     <div class="cta-row">
-      <a href="tel:+19179470401" class="btn-primary">📞 Call to Book</a>
+      <a onclick="return gtag_report_conversion('tel:+19179470401');" href="tel:+19179470401" class="btn-primary">📞 Call to Book</a>
       <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
     </div>
   </div>
@@ -141,8 +141,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
       <h3>Ready to book?</h3>
       <p>Call us or email to reserve your vehicle. Confirmation within the hour.</p>
       <div class="cta-row">
-        <a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');">
+        <a onclick="return gtag_report_conversion('tel:+19179470401');" href="tel:+19179470401" class="btn-primary">📞 +1 917 9470401</a>
         <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ support@rapidnrental.com</a>
       </div>
     </div>
@@ -167,8 +166,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
       <h3>Questions?</h3>
       <p>We're here to help. Call or email anytime.</p>
       <div class="cta-row">
-        <a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');">
+        <a onclick="return gtag_report_conversion('tel:+19179470401');" href="tel:+19179470401" class="btn-primary">📞 Call Us</a>
         <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
       </div>
     </div>
@@ -207,8 +205,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
       <h3>Ready to rent?</h3>
       <p>Call or email and we'll reserve your vehicle.</p>
       <div class="cta-row">
-        <a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');">
+        <a onclick="return gtag_report_conversion('tel:+19179470401');" href="tel:+19179470401" class="btn-primary">📞 Book Now</a>
         <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email</a>
       </div>
     </div>
@@ -225,8 +222,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
   <div class="section">
     <div class="about-card">
       <h3>📞 Phone</h3>
-      <p><a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');"><br/>9 AM – 9 PM, All Days</p>
+      <p><a onclick="return gtag_report_conversion('tel:+19179470401');" href="tel:+19179470401">+1 917 9470401</a><br/>9 AM – 9 PM, All Days</p>
     </div>
     <div class="about-card" style="margin-top:10px;">
       <h3>✉️ Email</h3>
@@ -273,175 +269,4 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20p
 
     <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If your data is compromised, we will investigate immediately within 24 hours, notify you via email within 72 hours (GDPR requirement), explain what data was affected, provide steps you can take to protect yourself, offer free credit monitoring if applicable, and report to regulatory authorities if required.</p>
 
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you're a European resident, you have rights under the General Data Protection Regulation (GDPR): the right of access to get a copy of your data, the right of rectification to correct inaccurate data, the right of erasure or "right to be forgotten" to request deletion, the right to restrict processing to limit how we use your data, the right to data portability to get your data in portable format, the right to object to certain types of processing, and the right to lodge a complaint with your local data protection authority. We process booking information under the legal basis of contract to process your rental. Payment data is processed under contract and legal basis to process payment and comply with tax law. Insurance details are processed under contract and legal basis to manage insurance and handle claims. Marketing emails are processed based on your consent to send promotional offers. Analytics are processed under legitimate interest to improve website experience. Fraud prevention is processed under legitimate interest to protect against theft and misuse.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you have concerns about how we handle your data, you can file a complaint with your country's data protection authority: Germany (Bundesdatenschutzbeauftragte), France (CNIL), Italy (Autorità Garante), Spain (Agencia Española de Protección de Datos), or UK (Information Commissioner's Office). For data transfers outside the EU, we use Standard Contractual Clauses (SCCs) to ensure your data meets EU protection standards.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you're a California resident, you have rights under the California Consumer Privacy Act (CCPA): the right to know what personal data we collect, the right to delete your data, the right to opt out of sale (we don't sell data, so this doesn't apply), and the right to non-discrimination meaning we won't penalize you for exercising your rights. To submit a CCPA request, email support@rapidnrental.com with subject "CCPA Request - [Right to Know / Right to Delete]" and include your name, email, and phone number. We'll verify your identity and respond within 45 days.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We use session cookies to keep you logged in (expire when browser closes), persistent cookies to remember your choices (1 year duration), Google Analytics to track site usage (2 years), Stripe pixels to track conversions (2 years), and marketing cookies to retarget ads (1-2 years). You can disable cookies in Chrome by going to Settings → Privacy → Cookies → Block all cookies. In Safari go to Preferences → Privacy → Cookies → "Never". In Firefox go to Preferences → Privacy → Uncheck "Accept cookies". In Edge go to Settings → Privacy → Cookies → Block all cookies. Note that disabling cookies may prevent our website from working properly for bookings, login, and payment processing.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our services are not intended for children under 18, as the legal rental age is 18-21 depending on jurisdiction. If you are under 18, do not provide personal information and do not attempt to book a rental. If we discover a child has provided data, we'll delete it immediately and notify the parent or guardian.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website may link to third-party websites like Google Maps and payment providers. This Privacy Policy does not apply to websites you access through external links, third-party services like Stripe, Wise, and Acko, social media platforms, or government websites. We're not responsible for their privacy practices so please review their privacy policies independently.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website is hosted on GitHub Pages (US-based). If you're in the EU or UK, your data may be transferred to the US. We protect international transfers with Standard Contractual Clauses (SCCs), encryption in transit, and strict access controls.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We may update this Privacy Policy to reflect new laws or regulations, changes to our business practices, technical improvements, or user feedback. We'll notify you of material changes by posting the updated policy on our website, updating the "Last Updated" date, and sending you an email if required by law. Your continued use of our services means acceptance of the updated policy.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">For privacy questions, email support@rapidnrental.com or call +1 917 9470401 (9 AM – 9 PM, all days). Mail us at Rapid Car Rentals, 210 Ashok Vihar Sector 3, Gurugram – 122001, Haryana, India. For GDPR or UK GDPR complaints, contact our Data Protection Officer at dpo@rapidnrental.com (response within 5 business days).</p>
-
-    <p style="font-size:0.75rem;color:#9ca3af;margin-top:20px;"><strong>Last Updated:</strong> August 2026</p>
-  </div>
-</section>
-
-<!-- TERMS -->
-<section class="page" id="page-terms">
-  <div class="hero">
-    <h1>Terms & Conditions</h1>
-    <p>Please read these terms carefully before booking a vehicle with us.</p>
-  </div>
-
-  <div class="section">
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;"><strong>Last Updated: August 22, 2026</strong></p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Welcome to Rapid Car Rentals. These Terms & Conditions govern your use of our website, rapidnrental.com, and any booking, quote, referral, or related service provided through the website. By using our website or requesting a booking through us, you agree to these Terms & Conditions.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Rapid Car Rentals provides an online travel and car-rental booking and referral service. Depending on the booking, Rapid Car Rentals may arrange, refer, or facilitate access to rental-car services provided by independent rental companies, suppliers, affiliates, or other third-party providers. Unless expressly stated otherwise, Rapid Car Rentals is not the owner or operator of the rental vehicle and is not the rental-car supplier. The rental agreement for the vehicle may be directly between you and the rental company or supplier providing the vehicle.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Each rental supplier may have its own terms and conditions, including requirements relating to driver age, driving licence, International Driving Permit, security deposits, credit-card requirements, insurance and protection products, mileage, fuel, additional drivers, geographic restrictions, cancellation and modification, late returns, vehicle availability, and damage and other charges. You are responsible for reviewing and complying with the applicable supplier's terms before completing your rental. Where supplier terms differ from information displayed on our website, the supplier's applicable rental terms may govern the actual rental.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Prices displayed on our website may vary depending on vehicle availability, rental dates, location, supplier, taxes, fees, currency exchange rates, and other booking conditions. A displayed price is not necessarily a guarantee of availability. A booking is confirmed only after the applicable booking process has been completed and confirmation has been issued. We will not knowingly advertise a price or offer that is materially different from the price or terms actually available to the customer at the time of booking.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">When you submit a booking request, you agree to provide accurate and complete information. A booking request does not by itself guarantee a reservation. We may contact you to confirm booking details, availability, pricing, identity, or payment information before a reservation is completed.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Payment may be processed through a third-party payment provider such as PayPal or Stripe. You agree to provide accurate payment and billing information. A payment may be subject to verification or approval by the applicable payment provider. Payment confirmation does not necessarily replace the rental supplier's own requirements, including security deposits or payment requirements at vehicle collection.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Cancellation and refund conditions depend on the specific booking and applicable rental supplier. Where a booking is refundable, the applicable refund amount and cancellation deadline will be communicated during the booking process or in the applicable booking confirmation. Some bookings may be non-refundable or may contain cancellation fees. Where Rapid Car Rentals collects a payment and a refund is approved, the refund will normally be made to the original payment method. Processing times may vary depending on the payment provider and customer's financial institution.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Requests to change a booking are subject to availability and the applicable supplier's terms. A change may result in a different price, additional fee, or other conditions. We cannot guarantee that a requested modification will be available.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Vehicle models shown on our website may represent a vehicle category rather than a guaranteed make or model. The rental supplier may provide a comparable vehicle within the reserved category, subject to its applicable terms and availability.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">The customer is responsible for meeting all applicable rental requirements. These may include valid identification, a valid driving licence, minimum age requirements, payment-card requirements, deposits, and other documentation requested by the rental supplier. Failure to meet the supplier's requirements may result in refusal of the rental and may affect eligibility for a refund.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website may contain links, offers, or services provided by third parties. Third-party companies operate independently from Rapid Car Rentals. We are not responsible for the policies, availability, websites, products, services, or actions of third-party providers. Where applicable, your use of a third-party service may also be governed by that provider's own terms and privacy policy.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Rapid Car Rentals may participate in affiliate and referral programs. This means we may receive a commission or other compensation when a customer completes a qualifying booking or transaction through certain links or offers on our website. Affiliate relationships do not increase the customer's price unless expressly stated.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We make reasonable efforts to keep information on our website accurate and current. However, rental availability, prices, supplier policies, and other travel information can change. We do not guarantee that every piece of information displayed on the website will always be complete, current, or error-free.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You agree not to use the website for unlawful purposes, provide false or misleading information, attempt to obtain services through fraudulent means, interfere with the operation or security of the website, use automated systems to improperly access or copy website content, or attempt to circumvent payment, booking, or security procedures.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">To the extent permitted by applicable law, Rapid Car Rentals will not be responsible for losses arising from the acts, omissions, delays, vehicle availability, cancellation policies, pricing changes, or service failures of independent rental suppliers or other third-party providers. Nothing in these Terms & Conditions excludes or limits liability that cannot legally be excluded or limited under applicable law.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You are responsible for checking your booking confirmation and ensuring that the information provided by you is accurate. You should contact us promptly if you identify an error in your booking details.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Your use of our website is also subject to our Privacy Policy, which explains how we collect, use, and protect personal information.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We may update these Terms & Conditions from time to time. The updated version will be posted on this page with a revised "Last Updated" date.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">For questions about bookings, payments, cancellations, or these Terms & Conditions, please contact Rapid Car Rentals at support@rapidnrental.com or call +1 917 9470401.</p>
-
-    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">By using our website or requesting a booking, you acknowledge that you have read and agreed to these Terms & Conditions.</p>
-
-    <p style="font-size:0.75rem;color:#9ca3af;margin-top:20px;"><strong>Last Updated:</strong> August 22, 2026</p>
-  </div>
-</section>
-
-<!-- REFUND -->
-<section class="page" id="page-refund">
-  <div class="hero">
-    <h1>Refund & Cancellation</h1>
-  </div>
-
-  <div class="section">
-    <div class="section-title">Cancellation Policy</div>
-    <div class="section-sub">
-      <strong>48+ hours before pickup:</strong> Full refund.<br/>
-      <strong>24–48 hours before:</strong> 75% refund.<br/>
-      <strong>Less than 24 hours:</strong> No refund.<br/><br/>
-      Refunds processed via Stripe within 5–10 business days. For emergency cancellations, call us immediately.
-    </div>
-
-    <div class="service-cta">
-      <h3>Need to cancel?</h3>
-      <p>Call us right away for immediate assistance.</p>
-      <div class="cta-row">
-        <a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESOURCES SECTION -->
-<div class="resources-section">
-  <div class="resources-grid">
-    <div class="resources-col">
-      <div class="resources-title">🌍 Locations</div>
-      <a href="cities.html" class="resources-link">Cities</a>
-      <a href="airports.html" class="resources-link">Airports</a>
-    </div>
-    <div class="resources-col">
-      <div class="resources-title">📚 Resources</div>
-      <a href="comparison-articles.html" class="resources-link">Comparisons</a>
-      <a href="travel-guides.html" class="resources-link">Travel Guides</a>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Rapid Car Rentals<span>.</span></div>
-  <div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact Us</a>
-    <a href="#privacy">Privacy Policy</a>
-    <a href="#terms">Terms &amp; Conditions</a>
-    <a href="#refund">Refund &amp; Cancellation</a>
-  </div>
-  <div class="footer-contact">
-    <div class="footer-contact-line">📞 <a href="tel:9179470401" 
-       onclick="return gtag_report_conversion('tel:9179470401');"> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
-    <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
-  </div>
-  <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
-</footer>
-
-<script>
-(function() {
-  const VALID_PAGES = ["home", "about", "services", "contact", "privacy", "terms", "refund"];
-
-  function showPage(pageName) {
-    if (!VALID_PAGES.includes(pageName)) {
-      pageName = "home";
-    }
-
-    document.querySelectorAll(".page").forEach(el => {
-      el.style.display = "none";
-      el.classList.remove("active");
-    });
-
-    const target = document.getElementById("page-" + pageName);
-    if (target) {
-      target.style.display = "block";
-      target.classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }
-
-  window.addEventListener("hashchange", () => {
-    showPage(location.hash.substring(1) || "home");
-  });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    showPage(location.hash.substring(1) || "home");
-  });
-})();
-</script>
-
-</body>
-</html>
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you're a European resident, you have rights under the General Data Protection Regulation (GDPR): the right of access to get a copy of your data, the right of rectification to correct inaccurate data, the right of erasure or "right to be forgotten" to request deletion, the right to restrict processing to limit how we use your data, the right to data portability to get your data in portable format, the r
