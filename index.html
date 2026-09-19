@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rapid Car Rentals — US & Europe</title>
+<meta name="description" content="Rapid Car Rentals offers flexible, fully insured car rentals across the US and Europe for tourists and business travellers." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#2563eb" />
+<meta property="og:title" content="Rapid Car Rentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rapidnrental.com" />
+<meta property="og:description" content="US & Europe Car Rentals" />
+<link rel="canonical" href="https://rapidnrental.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#ffffff; --off:#f7f8fa; --text:#111827; --muted:#6b7280;
+  --border:#e5e7eb; --accent:#2563eb; --accent-h:#1d4ed8;
+  --accent-l:#eff6ff; --accent-b:#bfdbfe;
+  --green:#16a34a; --green-l:#f0fdf4; --green-b:#bbf7d0;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);min-height:100vh;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:15px 24px;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.logo{font-size:1.05rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;cursor:pointer;background:none;border:none;text-decoration:none;display:inline-block;}
+.logo span{color:var(--accent);}
+.page{display:none;min-height:100vh;padding-top:56px;padding-bottom:0;}
+.page.active{display:block;}
+.hero{background:var(--off);text-align:center;padding:56px 24px 48px;border-bottom:1px solid var(--border);}
+.badge{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:0.72rem;font-weight:600;letter-spacing:0.04em;padding:4px 14px;border-radius:999px;border:1px solid var(--accent-b);margin-bottom:18px;}
+.hero h1{font-size:clamp(1.9rem,5.5vw,3rem);font-weight:700;letter-spacing:-0.03em;line-height:1.15;max-width:580px;margin:0 auto 14px;}
+.hero h1 span{color:var(--accent);}
+.hero p{font-size:0.97rem;color:var(--muted);max-width:440px;margin:0 auto 28px;line-height:1.75;}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:11px 24px;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:#fff;color:var(--text);border:1px solid var(--border);padding:11px 24px;border-radius:8px;font-size:0.88rem;font-weight:500;cursor:pointer;text-decoration:none;transition:border-color 0.2s,transform 0.15s;display:inline-block;}
+.btn-ghost:hover{border-color:#9ca3af;transform:translateY(-1px);}
+.section{padding:36px 20px;max-width:660px;margin:0 auto;}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px;}
+.section-sub{font-size:0.85rem;color:#374151;line-height:1.8;margin-bottom:18px;}
+.about-grid{display:grid;gap:10px;margin-top:10px;}
+.about-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:18px;}
+.about-card h3{font-size:0.88rem;font-weight:600;margin-bottom:5px;}
+.about-card p{font-size:0.8rem;color:var(--muted);line-height:1.65;}
+.service-cta{background:var(--accent-l);border:1px solid var(--accent-b);border-radius:12px;padding:22px 18px;text-align:center;margin-top:22px;}
+.service-cta h3{font-size:0.98rem;font-weight:700;margin-bottom:6px;}
+.service-cta p{font-size:0.8rem;color:var(--muted);margin-bottom:14px;}
+.resources-section{background:#1f2937;padding:40px 20px;border-top:1px solid #374151;}
+.resources-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;}
+.resources-col{display:flex;flex-direction:column;}
+.resources-title{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:14px;}
+.resources-link{font-size:0.8rem;color:#d1d5db;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.resources-link:hover{color:var(--accent);}
+footer{background:var(--off);border-top:1px solid var(--border);padding:28px 20px 22px;text-align:center;}
+.footer-logo{font-size:0.92rem;font-weight:700;margin-bottom:14px;}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-bottom:18px;}
+.footer-links a{font-size:0.78rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:3px;margin-bottom:14px;}
+.footer-contact-line{font-size:0.68rem;color:var(--muted);line-height:1.5;}
+.footer-contact-line a{color:var(--muted);text-decoration:none;}
+.footer-contact-line a:hover{color:var(--accent);}
+.footer-copy{font-size:0.66rem;color:#9ca3af;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Rapid Car Rentals<span>.</span></a>
+</nav>
+
+<!-- HOME -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <div class="badge">✈️ US & Europe</div>
+    <h1>Drive Anywhere. <span>On Your Terms.</span></h1>
+    <p>Rapid Car Rentals delivers transparent pricing, full insurance, and zero surprises. Available in the US and Europe.</p>
+    <div class="cta-row">
+      <a href="tel:+19179470401" class="btn-primary">📞 Call to Book</a>
+      <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Why Rapid Car Rentals</div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>✓ Transparent Pricing</h3>
+        <p>All costs shown upfront. No resort fees, no airport surcharges, no surprises at pickup.</p>
+      </div>
+      <div class="about-card">
+        <h3>✓ Full Insurance Included</h3>
+        <p>Comprehensive collision damage waiver and third-party liability on every booking.</p>
+      </div>
+      <div class="about-card">
+        <h3>✓ Secure Payment</h3>
+        <p>Stripe PCI-DSS Level 1 certified. Your card data never touches our systems.</p>
+      </div>
+      <div class="about-card">
+        <h3>✓ 7-Day Support</h3>
+        <p>Call or email anytime. Real humans, not bots. Available all day, every day.</p>
+      </div>
+    </div>
+
+    <div class="service-cta">
+      <h3>Ready to book?</h3>
+      <p>Call us or email to reserve your vehicle. Confirmation within the hour.</p>
+      <div class="cta-row">
+        <a href="tel:+19179470401" class="btn-primary">📞 +1 917 9470401</a>
+        <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ support@rapidnrental.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="page-about">
+  <div class="hero">
+    <h1>About Rapid Car Rentals</h1>
+    <p>Built for travelers who value transparency and reliability.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Our Story</div>
+    <div class="section-sub">Rapid Car Rentals was founded on a simple principle: car rental shouldn't involve hidden fees, confusing upsells, or counter-counter negotiations. We use Stripe for secure payments, Wise for international transfers, and Acko for comprehensive insurance. Transparent pricing. Full insurance. Zero surprises.</div>
+
+    <div class="section-title" style="margin-top:26px">Coverage</div>
+    <div class="section-sub">Serving tourists and business travellers across the United States and Europe. Economy cars for city driving. SUVs for families and road trips. Vans for groups.</div>
+
+    <div class="service-cta">
+      <h3>Questions?</h3>
+      <p>We're here to help. Call or email anytime.</p>
+      <div class="cta-row">
+        <a href="tel:+19179470401" class="btn-primary">📞 Call Us</a>
+        <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="page" id="page-services">
+  <div class="hero">
+    <h1>Our Services</h1>
+    <p>Flexible car rental built for every traveller.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Vehicle Types</div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Economy Cars</h3>
+        <p>Perfect for city driving and solo travellers. Fuel-efficient and easy to park.</p>
+      </div>
+      <div class="about-card">
+        <h3>SUVs</h3>
+        <p>Family road trips, cargo space, and comfort on long drives. Full insurance included.</p>
+      </div>
+      <div class="about-card">
+        <h3>Vans & People Carriers</h3>
+        <p>Group travel made easy. Seating for 7–9 passengers plus luggage space.</p>
+      </div>
+      <div class="about-card">
+        <h3>Premium & Luxury</h3>
+        <p>Executive vehicles for business travel. Same transparent pricing, premium comfort.</p>
+      </div>
+    </div>
+
+    <div class="service-cta">
+      <h3>Ready to rent?</h3>
+      <p>Call or email and we'll reserve your vehicle.</p>
+      <div class="cta-row">
+        <a href="tel:+19179470401" class="btn-primary">📞 Book Now</a>
+        <a href="mailto:support@rapidnrental.com" class="btn-ghost">✉️ Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="page-contact">
+  <div class="hero">
+    <h1>Contact Us</h1>
+    <p>Available 7 days a week. Call or email anytime.</p>
+  </div>
+
+  <div class="section">
+    <div class="about-card">
+      <h3>📞 Phone</h3>
+      <p><a href="tel:+19179470401">+1 917 9470401</a><br/>9 AM – 9 PM, All Days</p>
+    </div>
+    <div class="about-card" style="margin-top:10px;">
+      <h3>✉️ Email</h3>
+      <p><a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></p>
+    </div>
+    <div class="about-card" style="margin-top:10px;">
+      <h3>📍 Address</h3>
+      <p>210, Ashok Vihar, Sector 3<br/>Gurugram – 122001, Haryana<br/>India</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="page" id="page-privacy">
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. Transparent data protection, GDPR compliant.</p>
+  </div>
+
+  <div class="section">
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;"><strong>Last Updated: August 2026</strong></p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Rapid Car Rentals operates rapidnrental.com and provides car rental services across the United States and Europe. This Privacy Policy explains how we collect, use, disclose, and protect your information.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">When you book a vehicle, we collect your full name, date of birth, email address, phone number, home address, driver's license number, International Driving Permit (for Europe rentals), passport or ID number, emergency contact information, rental preferences, and special requests. For payment, we collect credit/debit card details (processed securely via Stripe; we do not store full card numbers), billing address, and payment method preference.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">When you visit our website, we automatically collect your IP address, browser type, operating system, device type, pages visited, time spent on each page, referring website, links clicked, search terms used, and location data derived from your IP address (not precise GPS). We may receive information about you from credit bureaus for payment verification, driver's license verification services to confirm age and licensing status, background check providers for fraud prevention, insurance partners (Acko) for coverage verification, payment processors (Stripe) for transaction verification, international banking partners (Wise) for international transfer records, and government agencies for customs and immigration data.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We use your information to process rental bookings, verify your identity and legal eligibility to rent, arrange vehicle pickup and return, process payments via Stripe, and manage your reservations. We respond to your inquiries, resolve complaints and disputes, provide technical support, send confirmations and receipts, and process refunds or cancellations. For safety and fraud prevention, we verify your eligibility, detect fraudulent bookings, prevent identity theft, monitor for unauthorized access, and assess rental risk based on damage history and accident patterns.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We document insurance coverage, process damage claims with photos and repair estimates, manage chargeback disputes if you dispute a charge with your bank, investigate accidents, and calculate liability for damage. We send you booking confirmations (automatic and required), rental reminders with pickup details, rental receipts via email for your accounting, promotional offers only if you opted in, collect feedback through post-rental surveys, and send newsletters if you subscribed. You can opt out of marketing emails anytime by clicking "Unsubscribe" at the bottom of any email.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We track website performance to see which pages work well, identify user behavior trends, improve user experience and site speed, conduct A/B testing of different versions, and generate reports on monthly traffic, conversion rates, and revenue. For legal and compliance purposes, we comply with tax regulations, traffic laws, and rental laws, respond to subpoenas if legally required by law enforcement, defend against legal claims if necessary, and maintain audit trails for regulatory inspections.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We never sell or share your personal data with marketing companies, data brokers, third-party advertisers (except for remarketing pixels), competitors, or unaffiliated businesses without your consent. We do share your information with Stripe for PCI-DSS Level 1 certified credit card processing, Acko for insurance coverage and claims, Wise for international fund transfers and refunds, driver's license verification services to confirm you're legally able to rent, address verification services to confirm your identity, law enforcement if legally required by warrant or subpoena, tax authorities for income and sales tax reporting, customs and immigration agencies for international travel documentation, email services to send confirmations and newsletters, Google Analytics to track website traffic and user behavior, and customer support tools like CRM systems and ticketing systems.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You have the right to request and download all personal information we hold about you. To request, email support@rapidnrental.com with subject "Request for My Personal Data" and we will respond within 30 days. If your information is inaccurate, you can request corrections by contacting us at support@rapidnrental.com and we'll update it within 5 business days. You can request deletion of your personal data, subject to legal requirements. We may retain data if required by law (tax records, insurance claims), needed for ongoing disputes, still relevant to your rental account, or required for fraud prevention. To request deletion, email support@rapidnrental.com with subject "Request for Data Deletion" and we'll respond within 30 days.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You can request your data in a standard electronic format (.CSV, .JSON) to transfer to another company by emailing support@rapidnrental.com with subject "Request for Data Portability." To stop receiving marketing emails, click "Unsubscribe" at the bottom of any marketing email or email us at support@rapidnrental.com. Your request takes effect within 48 hours. You'll still receive transactional emails like booking confirmations, receipts, and important notices.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We use HTTPS (SSL/TLS) encryption to encrypt data in transit. Stripe uses PCI-DSS Level 1 encryption for payment data. Sensitive data is encrypted at rest. Only authorized employees access personal data, passwords are required for all systems, we conduct regular security audits, and we perform background checks for staff. Your credit card never touches our servers. Stripe handles all payment processing with real-time fraud detection, 3D Secure additional authentication, chargeback protection, and full compliance with Payment Card Industry Data Security Standard (PCI-DSS).</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We retain payment information for 7 years for tax and fraud prevention purposes. Rental bookings are retained for 7 years for dispute resolution and records. Insurance claims are retained for 10 years for legal liability. Website analytics are retained for 26 months (Google Analytics default). Emails are retained for 3 years for customer service and support. Cookies vary in retention. Marketing lists are retained until you unsubscribe.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If your data is compromised, we will investigate immediately within 24 hours, notify you via email within 72 hours (GDPR requirement), explain what data was affected, provide steps you can take to protect yourself, offer free credit monitoring if applicable, and report to regulatory authorities if required.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you're a European resident, you have rights under the General Data Protection Regulation (GDPR): the right of access to get a copy of your data, the right of rectification to correct inaccurate data, the right of erasure or "right to be forgotten" to request deletion, the right to restrict processing to limit how we use your data, the right to data portability to get your data in portable format, the right to object to certain types of processing, and the right to lodge a complaint with your local data protection authority. We process booking information under the legal basis of contract to process your rental. Payment data is processed under contract and legal basis to process payment and comply with tax law. Insurance details are processed under contract and legal basis to manage insurance and handle claims. Marketing emails are processed based on your consent to send promotional offers. Analytics are processed under legitimate interest to improve website experience. Fraud prevention is processed under legitimate interest to protect against theft and misuse.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you have concerns about how we handle your data, you can file a complaint with your country's data protection authority: Germany (Bundesdatenschutzbeauftragte), France (CNIL), Italy (Autorità Garante), Spain (Agencia Española de Protección de Datos), or UK (Information Commissioner's Office). For data transfers outside the EU, we use Standard Contractual Clauses (SCCs) to ensure your data meets EU protection standards.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">If you're a California resident, you have rights under the California Consumer Privacy Act (CCPA): the right to know what personal data we collect, the right to delete your data, the right to opt out of sale (we don't sell data, so this doesn't apply), and the right to non-discrimination meaning we won't penalize you for exercising your rights. To submit a CCPA request, email support@rapidnrental.com with subject "CCPA Request - [Right to Know / Right to Delete]" and include your name, email, and phone number. We'll verify your identity and respond within 45 days.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We use session cookies to keep you logged in (expire when browser closes), persistent cookies to remember your choices (1 year duration), Google Analytics to track site usage (2 years), Stripe pixels to track conversions (2 years), and marketing cookies to retarget ads (1-2 years). You can disable cookies in Chrome by going to Settings → Privacy → Cookies → Block all cookies. In Safari go to Preferences → Privacy → Cookies → "Never". In Firefox go to Preferences → Privacy → Uncheck "Accept cookies". In Edge go to Settings → Privacy → Cookies → Block all cookies. Note that disabling cookies may prevent our website from working properly for bookings, login, and payment processing.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our services are not intended for children under 18, as the legal rental age is 18-21 depending on jurisdiction. If you are under 18, do not provide personal information and do not attempt to book a rental. If we discover a child has provided data, we'll delete it immediately and notify the parent or guardian.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website may link to third-party websites like Google Maps and payment providers. This Privacy Policy does not apply to websites you access through external links, third-party services like Stripe, Wise, and Acko, social media platforms, or government websites. We're not responsible for their privacy practices so please review their privacy policies independently.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website is hosted on GitHub Pages (US-based). If you're in the EU or UK, your data may be transferred to the US. We protect international transfers with Standard Contractual Clauses (SCCs), encryption in transit, and strict access controls.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We may update this Privacy Policy to reflect new laws or regulations, changes to our business practices, technical improvements, or user feedback. We'll notify you of material changes by posting the updated policy on our website, updating the "Last Updated" date, and sending you an email if required by law. Your continued use of our services means acceptance of the updated policy.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">For privacy questions, email support@rapidnrental.com or call +1 917 9470401 (9 AM – 9 PM, all days). Mail us at Rapid Car Rentals, 210 Ashok Vihar Sector 3, Gurugram – 122001, Haryana, India. For GDPR or UK GDPR complaints, contact our Data Protection Officer at dpo@rapidnrental.com (response within 5 business days).</p>
+
+    <p style="font-size:0.75rem;color:#9ca3af;margin-top:20px;"><strong>Last Updated:</strong> August 2026</p>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="page" id="page-terms">
+  <div class="hero">
+    <h1>Terms & Conditions</h1>
+    <p>Please read these terms carefully before booking a vehicle with us.</p>
+  </div>
+
+  <div class="section">
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;"><strong>Last Updated: August 22, 2026</strong></p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Welcome to Rapid Car Rentals. These Terms & Conditions govern your use of our website, rapidnrental.com, and any booking, quote, referral, or related service provided through the website. By using our website or requesting a booking through us, you agree to these Terms & Conditions.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Rapid Car Rentals provides an online travel and car-rental booking and referral service. Depending on the booking, Rapid Car Rentals may arrange, refer, or facilitate access to rental-car services provided by independent rental companies, suppliers, affiliates, or other third-party providers. Unless expressly stated otherwise, Rapid Car Rentals is not the owner or operator of the rental vehicle and is not the rental-car supplier. The rental agreement for the vehicle may be directly between you and the rental company or supplier providing the vehicle.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Each rental supplier may have its own terms and conditions, including requirements relating to driver age, driving licence, International Driving Permit, security deposits, credit-card requirements, insurance and protection products, mileage, fuel, additional drivers, geographic restrictions, cancellation and modification, late returns, vehicle availability, and damage and other charges. You are responsible for reviewing and complying with the applicable supplier's terms before completing your rental. Where supplier terms differ from information displayed on our website, the supplier's applicable rental terms may govern the actual rental.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Prices displayed on our website may vary depending on vehicle availability, rental dates, location, supplier, taxes, fees, currency exchange rates, and other booking conditions. A displayed price is not necessarily a guarantee of availability. A booking is confirmed only after the applicable booking process has been completed and confirmation has been issued. We will not knowingly advertise a price or offer that is materially different from the price or terms actually available to the customer at the time of booking.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">When you submit a booking request, you agree to provide accurate and complete information. A booking request does not by itself guarantee a reservation. We may contact you to confirm booking details, availability, pricing, identity, or payment information before a reservation is completed.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Payment may be processed through a third-party payment provider such as PayPal or Stripe. You agree to provide accurate payment and billing information. A payment may be subject to verification or approval by the applicable payment provider. Payment confirmation does not necessarily replace the rental supplier's own requirements, including security deposits or payment requirements at vehicle collection.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Cancellation and refund conditions depend on the specific booking and applicable rental supplier. Where a booking is refundable, the applicable refund amount and cancellation deadline will be communicated during the booking process or in the applicable booking confirmation. Some bookings may be non-refundable or may contain cancellation fees. Where Rapid Car Rentals collects a payment and a refund is approved, the refund will normally be made to the original payment method. Processing times may vary depending on the payment provider and customer's financial institution.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Requests to change a booking are subject to availability and the applicable supplier's terms. A change may result in a different price, additional fee, or other conditions. We cannot guarantee that a requested modification will be available.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Vehicle models shown on our website may represent a vehicle category rather than a guaranteed make or model. The rental supplier may provide a comparable vehicle within the reserved category, subject to its applicable terms and availability.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">The customer is responsible for meeting all applicable rental requirements. These may include valid identification, a valid driving licence, minimum age requirements, payment-card requirements, deposits, and other documentation requested by the rental supplier. Failure to meet the supplier's requirements may result in refusal of the rental and may affect eligibility for a refund.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Our website may contain links, offers, or services provided by third parties. Third-party companies operate independently from Rapid Car Rentals. We are not responsible for the policies, availability, websites, products, services, or actions of third-party providers. Where applicable, your use of a third-party service may also be governed by that provider's own terms and privacy policy.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Rapid Car Rentals may participate in affiliate and referral programs. This means we may receive a commission or other compensation when a customer completes a qualifying booking or transaction through certain links or offers on our website. Affiliate relationships do not increase the customer's price unless expressly stated.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We make reasonable efforts to keep information on our website accurate and current. However, rental availability, prices, supplier policies, and other travel information can change. We do not guarantee that every piece of information displayed on the website will always be complete, current, or error-free.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You agree not to use the website for unlawful purposes, provide false or misleading information, attempt to obtain services through fraudulent means, interfere with the operation or security of the website, use automated systems to improperly access or copy website content, or attempt to circumvent payment, booking, or security procedures.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">To the extent permitted by applicable law, Rapid Car Rentals will not be responsible for losses arising from the acts, omissions, delays, vehicle availability, cancellation policies, pricing changes, or service failures of independent rental suppliers or other third-party providers. Nothing in these Terms & Conditions excludes or limits liability that cannot legally be excluded or limited under applicable law.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">You are responsible for checking your booking confirmation and ensuring that the information provided by you is accurate. You should contact us promptly if you identify an error in your booking details.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">Your use of our website is also subject to our Privacy Policy, which explains how we collect, use, and protect personal information.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">We may update these Terms & Conditions from time to time. The updated version will be posted on this page with a revised "Last Updated" date.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">For questions about bookings, payments, cancellations, or these Terms & Conditions, please contact Rapid Car Rentals at support@rapidnrental.com or call +1 917 9470401.</p>
+
+    <p style="font-size:0.85rem;color:#374151;line-height:1.9;margin-bottom:14px;">By using our website or requesting a booking, you acknowledge that you have read and agreed to these Terms & Conditions.</p>
+
+    <p style="font-size:0.75rem;color:#9ca3af;margin-top:20px;"><strong>Last Updated:</strong> August 22, 2026</p>
+  </div>
+</section>
+
+<!-- REFUND -->
+<section class="page" id="page-refund">
+  <div class="hero">
+    <h1>Refund & Cancellation</h1>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Cancellation Policy</div>
+    <div class="section-sub">
+      <strong>48+ hours before pickup:</strong> Full refund.<br/>
+      <strong>24–48 hours before:</strong> 75% refund.<br/>
+      <strong>Less than 24 hours:</strong> No refund.<br/><br/>
+      Refunds processed via Stripe within 5–10 business days. For emergency cancellations, call us immediately.
+    </div>
+
+    <div class="service-cta">
+      <h3>Need to cancel?</h3>
+      <p>Call us right away for immediate assistance.</p>
+      <div class="cta-row">
+        <a href="tel:+19179470401" class="btn-primary">📞 Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES SECTION -->
+<div class="resources-section">
+  <div class="resources-grid">
+    <div class="resources-col">
+      <div class="resources-title">🌍 Locations</div>
+      <a href="cities.html" class="resources-link">Cities</a>
+      <a href="airports.html" class="resources-link">Airports</a>
+    </div>
+    <div class="resources-col">
+      <div class="resources-title">📚 Resources</div>
+      <a href="comparison-articles.html" class="resources-link">Comparisons</a>
+      <a href="travel-guides.html" class="resources-link">Travel Guides</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Rapid Car Rentals<span>.</span></div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms &amp; Conditions</a>
+    <a href="#refund">Refund &amp; Cancellation</a>
+  </div>
+  <div class="footer-contact">
+    <div class="footer-contact-line">📞 <a href="tel:+19179470401">+1 917 9470401</a> &nbsp;·&nbsp; ✉️ <a href="mailto:support@rapidnrental.com">support@rapidnrental.com</a></div>
+    <div class="footer-contact-line">📍 210, Ashok Vihar, Sector 3, Gurugram – 122001</div>
+  </div>
+  <div class="footer-copy">© 2025 Rapid Car Rentals. All rights reserved.</div>
+</footer>
+
+<script>
+(function() {
+  const VALID_PAGES = ["home", "about", "services", "contact", "privacy", "terms", "refund"];
+
+  function showPage(pageName) {
+    if (!VALID_PAGES.includes(pageName)) {
+      pageName = "home";
+    }
+
+    document.querySelectorAll(".page").forEach(el => {
+      el.style.display = "none";
+      el.classList.remove("active");
+    });
+
+    const target = document.getElementById("page-" + pageName);
+    if (target) {
+      target.style.display = "block";
+      target.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+
+  window.addEventListener("hashchange", () => {
+    showPage(location.hash.substring(1) || "home");
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    showPage(location.hash.substring(1) || "home");
+  });
+})();
+</script>
+
+</body>
+</html>
